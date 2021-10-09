@@ -10,5 +10,6 @@ public class SudoJava {
 	System.out.println("Hello World!");
 	System.out.print("Hello "+name);
 	System.out.print("Eclipse shortcut keys configuration");
+	System.out.print("Testing GUI");
 }
 }
