@@ -1,3 +1,4 @@
+package sudoJavaPackage;
 
 public class Main {
 
