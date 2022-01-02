@@ -1,25 +1,17 @@
 package pps;
 
-class superclass {
+public class Inheritance01 {
 	
-	public int sum(int num1, int num2) {
-		return num1+num2;
+	
+public static void main (String[] args) {
+	
+	int[] arr = new int[10];
+	//arr[0]=10;
+	
+	
+	for(int val: arr) {
+		System.out.println(val);
 	}
 	
-	public void printer() {
-		System.out.println("Test message");
-		}
-	
-	
-}
-
-public class Inheritance01 extends superclass {
-	
-	public static void main (String args[]) {
-		//sum(10,20);
-		
-		System.out.println();
-		
-	}
-
+}	
 }
