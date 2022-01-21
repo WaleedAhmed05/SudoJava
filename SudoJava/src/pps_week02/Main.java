@@ -3,6 +3,25 @@ package pps_week02;
 public class Main {
 	
 	public static void main(String[] args) {
+		
+		
+		Card crd = new Card("Luncinda","Holiday");
+		crd.greeting();
+		//Happy Holiday
+		Valentine crd2 = new Valentine("Walter", 7);
+		crd2.greeting();
+		
+		//Dear Walter
+		//Happy Valentine
+		//XXXXXXX  
+		
+		
+		
+	//	DogeCoin dc= new DogeCoin();
+	//	Bitcoin bc= new Bitcoin();
+		
+	//	System.out.println(dc);
+	//	System.out.println(bc);
 		//args=new String[5];
 		//args[0]="hellow";
 		//System.out.println(args.length);
@@ -11,8 +30,8 @@ public class Main {
 		
 	//	Automatic auto = new Automatic();
 		//System.out.println(Rectangle(10,10));
-		Rectange r= new Rectange(10,10);
-		System.out.println(r.toString());
+		//Rectange r= new Rectange(10,10);
+		//System.out.println(r.toString());
 		
 	} 
 	
