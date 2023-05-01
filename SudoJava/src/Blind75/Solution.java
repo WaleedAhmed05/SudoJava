@@ -6,9 +6,15 @@ public class Solution {
 
     public static void main(String args[]) {
 
-        int[] nums ={1,2,3,1};
-        ContainsDuplicate Cd = new ContainsDuplicate();
-        System.out.println(Cd.containsDuplicate(nums));
+        int[] nums={11,7,15,2};
+        int target = 26;
+
+        TwoSum tsum = new TwoSum();
+        tsum.twoSum(nums,target);
+        int [] a =tsum.twoSum(nums,target);
+        System.out.println(a[0] +" " + a[1]);
+
+
 
     }
 
