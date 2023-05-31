@@ -37,7 +37,7 @@ public class TopKFrequentElements {
         int[] mostFrequentElement = new int[k];
         //Integer, frequency.
 
-        for(int i: nums){
+        for(int i: nums){ //storing frequency of each element in hashmap.
             if(map.containsKey(i)){
                 map.put(i,map.get(i)+1);
             }
@@ -47,34 +47,78 @@ public class TopKFrequentElements {
             }
         }
 
-        List[] frequency_table= new List[nums.length+1];
+        List[] frequency_table= new List[nums.length+1]; //array of list.
+        //Here indexes of this array are frequency of "nums"
 
         for(Map.Entry<Integer,Integer> x: map.entrySet()){
-            int index = x.getValue(); //here frequency is index of array.
-            if(!frequency_table[index].isEmpty()){
-                //List<Integer> list = frequency_table[index];
-                frequency_table[index].add(x.getKey());
+            ; //it will be index for frequency_table.
+            if(frequency_table[x.getValue()]==null){ //if Frequency_table index is empty.
+                frequency_table[x.getValue()] = new ArrayList<>();
+                frequency_table[x.getValue()].add(x.getKey()); //add element into frequency table.
             }
-            else{
-                List<Integer> list = new ArrayList<>();
-                list.add(x.getKey());
-                frequency_table[index] = list;
+            else {
+
+                frequency_table[x.getValue()].add(x.getKey()); //add element into frequency table.
             }
 
+        }
+
+        for(int i=0; i<frequency_table.length; i++){
+            if(frequency_table[i]==null){
+                frequency_table[i]= new ArrayList();
+            }
         }
 
         int counter=0;
-        for(int i=frequency_table.length; i>=0; i--){
+        for(int i=frequency_table.length-1; i>=0; i--){
 
-            if(k<1){
-                break;
+            if(counter==k) {
+                System.out.println("it should stop here!");
+                break; //Only append top K frequent elements.
             }
-            if(!frequency_table[i].isEmpty()){
-                //mostFrequentElement[counter]=frequency_table[i].get(0);
+
+            System.out.println("freg: "+i);
+            for(int j=0; j<frequency_table[i].size(); j++){
+
+                if(!frequency_table[i].isEmpty()){
+                    mostFrequentElement[counter]=(int)frequency_table[i].get(j);
+                    System.out.println(frequency_table[i].get(j));
+                    counter++;
+                }
+
             }
+
         }
 
 
-        return new int[5];
+//        for(int i=frequency_table.length; i>=0; i--){
+//
+//            if(k<1){
+//                break;
+//            }
+//            if(!frequency_table[i].isEmpty()){
+//                //mostFrequentElement[counter]=frequency_table[i].get(0);
+//            }
+//        }
+
+//        for(Map.Entry<Integer,Integer> x: map.entrySet()){
+//            int index = x.getValue(); //here frequency is index of array.
+//            if(!frequency_table[index].isEmpty()){
+//                //List<Integer> list = frequency_table[index];
+//                frequency_table[index].add(x.getKey());
+//            }
+//            else{
+//                List<Integer> list = new ArrayList<>();
+//                list.add(x.getKey());
+//                frequency_table[index] = list;
+//            }
+//
+//        }
+//
+//        int counter=0;
+
+
+
+        return mostFrequentElement;
     }
 }
