@@ -1,4 +1,4 @@
-package l33tc0de;
+package src.l33tc0de;
 
 /**
  * @author Waleed05

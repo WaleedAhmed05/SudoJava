@@ -2,6 +2,19 @@ package src.Blind75;
 
 public class MergeSort {
 
+
+
+    public void mergesort(char[] arr1){
+
+        if(arr1.length>0){
+            int[] arr= new int[arr1.length];
+
+            int[] helper = new int[arr.length];
+            mergesort(arr,helper,0,arr.length-1);
+        }
+
+    }
+
     public void mergesort(int[] arr){
 
         if(arr.length>0){
@@ -49,7 +62,7 @@ public class MergeSort {
 
         int remaining = mid-helperleft;
         for(int i=0; i<=remaining; i++){
-            arr[current+i]=helper[helperleft+1];
+            arr[current+i]=helper[helperleft+i];
         }
 
     }
